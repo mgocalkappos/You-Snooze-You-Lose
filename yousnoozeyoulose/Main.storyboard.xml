@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Chalkduster.ttf">
+            <string>Chalkduster</string>
+        </array>
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Thin</string>
+        </array>
+        <array key="TrebuchetMS.ttf">
+            <string>TrebuchetMS</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Main Menu-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="Main Menu" id="BYZ-38-t0r" customClass="ViewController" customModule="You_Snooze_You_Lose" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7K-xC-7U6">
+                                <rect key="frame" x="164" y="452" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Snooze You Lose!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIo-SZ-Tas">
+                                <rect key="frame" x="225" y="76" width="372" height="48"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7x-l6-oWP">
+                                <rect key="frame" x="344" y="179" width="124" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="mMK-RB-dwb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                <state key="normal" title="PLAY" backgroundImage="11971488431079343407barretr_Pencil.svg.med">
+                                    <color key="titleColor" red="0.0" green="0.043279644489999998" blue="0.34558859609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="N2O-FH-oDx" kind="presentation" identifier="showPlayScreen" modalTransitionStyle="crossDissolve" id="jJZ-7f-bmY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRN-wk-gfH">
+                                <rect key="frame" x="344" y="277" width="124" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="f0K-Bt-kS8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                <state key="normal" title="Shop" backgroundImage="11971488431079343407barretr_Pencil.svg.med">
+                                    <color key="titleColor" red="0.0" green="0.043279644489999998" blue="0.34558859609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="e3v-Vq-bri" kind="presentation" identifier="showShop" modalTransitionStyle="crossDissolve" id="eVS-6F-Gym"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAd-XE-uj4">
+                                <rect key="frame" x="344" y="225" width="124" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="lCL-Yh-wYF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                <state key="normal" title="Settings" backgroundImage="11971488431079343407barretr_Pencil.svg.med">
+                                    <color key="titleColor" red="0.0" green="0.043279644491666623" blue="0.34558859609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="n8m-cN-hru" kind="presentation" identifier="showSettings" modalTransitionStyle="crossDissolve" id="4dp-Pn-TKt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.53333333329999999" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="hRN-wk-gfH" firstAttribute="top" secondItem="SAd-XE-uj4" secondAttribute="bottom" constant="14" id="0ZQ-tk-gVJ"/>
+                            <constraint firstItem="SAd-XE-uj4" firstAttribute="trailing" secondItem="hRN-wk-gfH" secondAttribute="trailing" id="2jG-pE-ubD"/>
+                            <constraint firstItem="lIo-SZ-Tas" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="181" id="5Ty-eA-jnc"/>
+                            <constraint firstItem="V7x-l6-oWP" firstAttribute="top" secondItem="lIo-SZ-Tas" secondAttribute="bottom" constant="55" id="8wz-6m-wvv"/>
+                            <constraint firstItem="V7x-l6-oWP" firstAttribute="leading" secondItem="SAd-XE-uj4" secondAttribute="leading" id="9KA-fS-MJC"/>
+                            <constraint firstItem="V7x-l6-oWP" firstAttribute="trailing" secondItem="SAd-XE-uj4" secondAttribute="trailing" id="Dum-Gy-2Jt"/>
+                            <constraint firstItem="a7K-xC-7U6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="452" id="II6-Nr-dK6"/>
+                            <constraint firstItem="V7x-l6-oWP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QkO-j7-R8A"/>
+                            <constraint firstItem="V7x-l6-oWP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="300" id="c6w-NQ-EYE"/>
+                            <constraint firstItem="a7K-xC-7U6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="164" id="h4I-YT-Yhk"/>
+                            <constraint firstItem="lIo-SZ-Tas" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="76" id="mjr-sS-Kow"/>
+                            <constraint firstItem="SAd-XE-uj4" firstAttribute="leading" secondItem="hRN-wk-gfH" secondAttribute="leading" id="o9B-Ow-Gzu"/>
+                            <constraint firstItem="SAd-XE-uj4" firstAttribute="top" secondItem="V7x-l6-oWP" secondAttribute="bottom" constant="8" symbolic="YES" id="zzf-b5-MVe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="11.822660098522167" y="45.600000000000001"/>
+        </scene>
+        <!--SettingsMenu-->
+        <scene sceneID="rbX-Nu-7qV">
+            <objects>
+                <viewController title="SettingsMenu" id="n8m-cN-hru" customClass="SettingsViewController" customModule="You_Snooze_You_Lose" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X9l-v3-bc6">
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6E9-Fs-CVQ">
+                                <rect key="frame" x="349" y="33" width="115" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Music" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="748-ZC-8Xb">
+                                <rect key="frame" x="243" y="134" width="65" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nk1-Ch-cpY">
+                                <rect key="frame" x="52" y="17" width="44" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="settingsToMain" modalTransitionStyle="crossDissolve" id="Iwf-RU-YBD"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yYZ-Lj-GkI">
+                                <rect key="frame" x="501" y="134" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="vku-MO-hJx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dZH-t8-Og7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-667" y="854"/>
+        </scene>
+        <!--PlayLevel-->
+        <scene sceneID="9Qs-w3-sny">
+            <objects>
+                <viewController title="PlayLevel" id="N2O-FH-oDx" customClass="SecondViewController" customModule="You_Snooze_You_Lose" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GBY-uR-4QK">
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4w-er-CCS">
+                                <rect key="frame" x="110" y="53" width="114" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="28"/>
+                                <state key="normal" title="Level 1">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Yve-Uz-xjG" kind="presentation" modalTransitionStyle="crossDissolve" id="ue9-W8-6Gh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.89680157630000001" blue="0.96640863830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="XsQ-0h-XXd"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vmf-n6-MUz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="668.7192118226601" y="853.60000000000002"/>
+        </scene>
+        <!--LevelOne-->
+        <scene sceneID="qNe-Fz-oja">
+            <objects>
+                <viewController title="LevelOne" id="Yve-Uz-xjG" customClass="LevelOneViewController" customModule="You_Snooze_You_Lose" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Xu-2H-bpG">
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hS5-TJ-f5V">
+                                <rect key="frame" x="771" y="12" width="26" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Settings-Button"/>
+                                <connections>
+                                    <action selector="SettingsBtnPressed:" destination="Yve-Uz-xjG" eventType="touchUpInside" id="Q0B-sy-zbe"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YyA-tW-le4" userLabel="SettingsBackground">
+                                <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.16015701655941367" green="0.27183163500122787" blue="0.28094618055555554" alpha="0.59120639534883723" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95258962560000005" green="0.38418133719999997" blue="0.34558859609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="7uu-rP-hL9"/>
+                    </view>
+                    <connections>
+                        <outlet property="SettingsBtn" destination="hS5-TJ-f5V" id="5eR-SW-jg7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rGi-ZX-IFj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="668.7192118226601" y="1760.8"/>
+        </scene>
+        <!--Shop-->
+        <scene sceneID="KMt-ew-xOR">
+            <objects>
+                <viewController title="Shop" id="e3v-Vq-bri" customClass="ShopViewController" customModule="You_Snooze_You_Lose" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8MF-Tg-e9H">
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIi-fx-xCA">
+                                <rect key="frame" x="368" y="61" width="77" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJJ-s2-Xod">
+                                <rect key="frame" x="52" y="17" width="44" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="shopToMain" modalTransitionStyle="crossDissolve" id="aOj-oo-rr5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="d6G-JA-Nf8"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xOe-oV-e9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="702" y="-937"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="11971488431079343407barretr_Pencil.svg.med" width="300" height="300"/>
+        <image name="Settings-Button" width="2382" height="2382"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="aOj-oo-rr5"/>
+    </inferredMetricsTieBreakers>
+</document>
