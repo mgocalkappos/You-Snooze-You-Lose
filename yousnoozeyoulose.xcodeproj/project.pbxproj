@@ -12,7 +12,6 @@
 		2F2A9905203B2CCD000E8670 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2F2A9904203B2CCD000E8670 /* Actions.sks */; };
 		2F2A9907203B2CCD000E8670 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2A9906203B2CCD000E8670 /* GameScene.swift */; };
 		2F2A9909203B2CCD000E8670 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2A9908203B2CCD000E8670 /* GameViewController.swift */; };
-		2F2A990E203B2CCD000E8670 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F2A990D203B2CCD000E8670 /* Assets.xcassets */; };
 		2F2A991C203B2CCD000E8670 /* yousnoozeyouloseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2A991B203B2CCD000E8670 /* yousnoozeyouloseTests.swift */; };
 		2F2A9927203B2CCD000E8670 /* yousnoozeyouloseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2A9926203B2CCD000E8670 /* yousnoozeyouloseUITests.swift */; };
 		2F2A9935203B2D79000E8670 /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2A9934203B2D79000E8670 /* MainMenuScene.swift */; };
@@ -23,6 +22,10 @@
 		F268FA51205C294300C9B690 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F268FA50205C294200C9B690 /* Main.storyboard */; };
 		F268FA53205C294900C9B690 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F268FA52205C294800C9B690 /* LaunchScreen.storyboard */; };
 		F268FA55205C398D00C9B690 /* Off Limits.wav in Resources */ = {isa = PBXBuildFile; fileRef = F268FA54205C398D00C9B690 /* Off Limits.wav */; };
+		F269BDD0207AD282005F4856 /* 8-BIT-WONDER.TTF in Resources */ = {isa = PBXBuildFile; fileRef = F269BDCF207AD281005F4856 /* 8-BIT-WONDER.TTF */; };
+		F269BDD1207AD282005F4856 /* 8-BIT-WONDER.TTF in Resources */ = {isa = PBXBuildFile; fileRef = F269BDCF207AD281005F4856 /* 8-BIT-WONDER.TTF */; };
+		F269BDD2207AD282005F4856 /* 8-BIT-WONDER.TTF in Resources */ = {isa = PBXBuildFile; fileRef = F269BDCF207AD281005F4856 /* 8-BIT-WONDER.TTF */; };
+		F2D7E058207C687D00964C73 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2D7E057207C687D00964C73 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +52,6 @@
 		2F2A9904203B2CCD000E8670 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		2F2A9906203B2CCD000E8670 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		2F2A9908203B2CCD000E8670 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		2F2A990D203B2CCD000E8670 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F2A9912203B2CCD000E8670 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F2A9917203B2CCD000E8670 /* yousnoozeyouloseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yousnoozeyouloseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F2A991B203B2CCD000E8670 /* yousnoozeyouloseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yousnoozeyouloseTests.swift; sourceTree = "<group>"; };
@@ -65,6 +67,8 @@
 		F268FA50205C294200C9B690 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F268FA52205C294800C9B690 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F268FA54205C398D00C9B690 /* Off Limits.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Off Limits.wav"; sourceTree = "<group>"; };
+		F269BDCF207AD281005F4856 /* 8-BIT-WONDER.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "8-BIT-WONDER.TTF"; sourceTree = "<group>"; };
+		F2D7E057207C687D00964C73 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,10 +119,12 @@
 		2F2A98FF203B2CCC000E8670 /* yousnoozeyoulose */ = {
 			isa = PBXGroup;
 			children = (
+				F2D7E057207C687D00964C73 /* Images.xcassets */,
 				2F2A9900203B2CCC000E8670 /* AppDelegate.swift */,
 				2F2A9902203B2CCD000E8670 /* GameScene.sks */,
-				2F2A9904203B2CCD000E8670 /* Actions.sks */,
 				2F2A9906203B2CCD000E8670 /* GameScene.swift */,
+				2F2A9904203B2CCD000E8670 /* Actions.sks */,
+				F269BDCE207AD26C005F4856 /* Fonts */,
 				2FB24219204B6351001F0800 /* GameGameScene.swift */,
 				F268FA50205C294200C9B690 /* Main.storyboard */,
 				2F7247A0203E9C89006EDE47 /* GameOverScene.swift */,
@@ -128,7 +134,6 @@
 				F268FA54205C398D00C9B690 /* Off Limits.wav */,
 				2F2A9936203B2DF2000E8670 /* SettingsScene.swift */,
 				2F7247A2203F556D006EDE47 /* ShopScene.swift */,
-				2F2A990D203B2CCD000E8670 /* Assets.xcassets */,
 				2F2A9912203B2CCD000E8670 /* Info.plist */,
 			);
 			path = yousnoozeyoulose;
@@ -150,6 +155,14 @@
 				2F2A9928203B2CCD000E8670 /* Info.plist */,
 			);
 			path = yousnoozeyouloseUITests;
+			sourceTree = "<group>";
+		};
+		F269BDCE207AD26C005F4856 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F269BDCF207AD281005F4856 /* 8-BIT-WONDER.TTF */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,7 +276,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F2A9903203B2CCD000E8670 /* GameScene.sks in Resources */,
-				2F2A990E203B2CCD000E8670 /* Assets.xcassets in Resources */,
+				F269BDD0207AD282005F4856 /* 8-BIT-WONDER.TTF in Resources */,
+				F2D7E058207C687D00964C73 /* Images.xcassets in Resources */,
 				2F2A9905203B2CCD000E8670 /* Actions.sks in Resources */,
 				F268FA55205C398D00C9B690 /* Off Limits.wav in Resources */,
 				F268FA53205C294900C9B690 /* LaunchScreen.storyboard in Resources */,
@@ -275,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F269BDD1207AD282005F4856 /* 8-BIT-WONDER.TTF in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +297,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F269BDD2207AD282005F4856 /* 8-BIT-WONDER.TTF in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

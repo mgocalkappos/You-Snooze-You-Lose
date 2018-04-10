@@ -24,22 +24,26 @@ class GameScene: SKScene {
     var a = SKSpriteNode(imageNamed: "redbox")
     var outline = SKSpriteNode(imageNamed:"outlinebar")
     var outline2 = SKSpriteNode(imageNamed:"outlinebar")
-    var clock = SKSpriteNode(imageNamed:"clock")
-    var slabel = SKLabelNode()
-    var tlabel = SKLabelNode()
+    var slabel = SKLabelNode(fontNamed: "8BIT WONDER")
+    var tlabel = SKLabelNode(fontNamed: "8BIT WONDER")
     
-    var deskb = SKSpriteNode(imageNamed: "Asset 10")
+    
+    var deskb = SKSpriteNode(imageNamed: "studentDeskGameScene")
+    var clock = SKSpriteNode(imageNamed: "clockGameScene")
+    var laptop = SKSpriteNode(imageNamed: "laptopGameScene")
+    var phone = SKSpriteNode(imageNamed: "phoneGameScene")
+    
     var whiteboard = SKSpriteNode(imageNamed:"whiteboard")
     var stick = SKSpriteNode(imageNamed:"stick2")
-    var wall = SKSpriteNode(imageNamed:"wall")
-    var floor = SKSpriteNode(imageNamed:"floor")
-    var table = SKSpriteNode(imageNamed:"table")
     var comp = SKSpriteNode(imageNamed:"computer")
     var eye = SKSpriteNode(imageNamed:"redcone1")
+    var classroom = SKSpriteNode(imageNamed: "classroom")
 
-    var timeLeft = SKLabelNode(fontNamed: "chalkduster")
+    var timeLeft = SKLabelNode(fontNamed: "8BIT WONDER")
     
     let tapToStartLabel = SKLabelNode()
+    
+    
     
     //Game states to determine what happens next (State pattern)
     enum gameState{
@@ -208,9 +212,11 @@ class GameScene: SKScene {
         tlabel.position = CGPoint(x: self.size.width*0.120, y: self.size.height*0.54)
         self.addChild(tlabel)
         
+        
+        //RESIZE
         //Desk parts
-        deskb.position = CGPoint(x: self.size.width/2, y: self.size.height*0.15)
-        deskb.zPosition = 3
+        deskb.position = CGPoint(x: self.size.width/2, y: self.size.height*0.35)
+        deskb.zPosition = 2
         deskb.setScale(1.5)
         deskb.name = "deskb"
         self.addChild(deskb)
@@ -219,12 +225,12 @@ class GameScene: SKScene {
         whiteboard.zPosition = 2
         whiteboard.name = "whiteboard"
         self.addChild(whiteboard)
-        
+
         stick.position = CGPoint(x:self.size.width*0.9, y: self.size.height*0.5)
         stick.zPosition = 2
         stick.name = "stick"
         self.addChild(stick)
-        
+
         eye.anchorPoint = CGPoint(x:0.5, y: 1)
         eye.position = CGPoint(x:self.size.width*0.895, y: self.size.height*0.6)
         eye.zPosition = 4
@@ -232,30 +238,26 @@ class GameScene: SKScene {
         eye.alpha = 0.4
         eye.zRotation = 0.2
         self.addChild(eye)
-        
-        clock.position = CGPoint(x:self.size.width*0.15, y: self.size.height*0.75)
+
+        clock.position = CGPoint(x:self.size.width*0.27, y: self.size.height*0.65)
         clock.zPosition = 2
+        clock.setScale(1.5)
         self.addChild(clock)
+        //FIX
+//        phone.position = CGPoint(x:self.size.width * 0.6, y: self.size.height*0.2)
+//        phone.zPosition = 2
+//        self.addChild(phone)
+        //FIX
+//        laptop.position = CGPoint(x:self.size.width * 0.63, y: self.size.height*0.2)
+//        laptop.zPosition = 0
+//        self.addChild(laptop)
         
-        wall.position = CGPoint(x:self.size.width*0,y: self.size.height*0.9)
-        wall.zPosition = 1
-        wall.anchorPoint = CGPoint(x:0,y:0.5)
-        wall.setScale(2)
-        self.addChild(wall)
+        classroom.position = CGPoint(x:self.size.width*0, y: self.size.height*0.5)
+        classroom.zPosition = 0
+        classroom.anchorPoint = CGPoint(x:0, y:0.5)
+        classroom.setScale(2)
+        self.addChild(classroom)
         
-        floor.position = CGPoint(x: self.size.width*0, y: self.size.height*0.1)
-        floor.zPosition = 0
-        floor.anchorPoint = CGPoint(x: 0, y: 0.5)
-        floor.setScale(2)
-        self.addChild(floor)
-        
-        table.position = CGPoint(x:self.size.width*0.4, y: self.size.height*0.4)
-        table.zPosition = 2
-        self.addChild(table)
-        
-        comp.position = CGPoint(x:self.size.width*0.6, y:self.size.height*0.45)
-        comp.zPosition = 2
-        self.addChild(comp)
         
         timeLeft.fontSize = 60
         timeLeft.fontColor = SKColor.black
@@ -295,6 +297,7 @@ class GameScene: SKScene {
         let waitToChangeScene = SKAction.wait(forDuration: 1)
         let changeSceneSequence = SKAction.sequence([waitToChangeScene, changeSceneAction])
         self.run(changeSceneSequence)
+        
         
     }
     
