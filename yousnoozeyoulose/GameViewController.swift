@@ -46,6 +46,9 @@ class GameViewController: UIViewController {
        scene.scaleMode = .aspectFill
         
         skView.presentScene(scene)
+        
+        
+        
     }
 
     override var shouldAutorotate: Bool {
@@ -71,5 +74,18 @@ class GameViewController: UIViewController {
     func update(){
 
         
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            
+            
+            
+        } else {
+            
+            //Error
+            
+        }
     }
 }

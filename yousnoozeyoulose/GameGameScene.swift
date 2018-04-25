@@ -8,17 +8,21 @@
 
 import SpriteKit
 import GameplayKit
+import UIKit
+
 extension Int {
     var degreesToRadians: Double { return Double(self) * M_PI / 180 }
     var radiansToDegrees: Double { return Double(self) * 180 / M_PI }
 }
 class GameGameScene: SKScene {
 
+    var cameraView: camera!
+    
     
      let snack = SKSpriteNode(imageNamed: "snack3")
      let phone = SKSpriteNode(imageNamed: "phone3")
-     let laptop = SKSpriteNode(imageNamed: "laptop3")
-     let notebook = SKSpriteNode(imageNamed: "notebook3")
+     let laptop = SKSpriteNode(imageNamed: "laptopGGS")
+     let notebook = SKSpriteNode(imageNamed: "notebookGGS")
     var slabel = SKLabelNode()
     var tlabel = SKLabelNode()
     
@@ -90,13 +94,13 @@ class GameGameScene: SKScene {
         phone.setScale(2)
         self.addChild(phone)
         
-        laptop.position = CGPoint(x: self.size.width*0.5, y: self.size.height*0.3)
+        laptop.position = CGPoint(x: self.size.width*0.4, y: self.size.height*0.32)
         laptop.zPosition = 1
         laptop.name = "laptop"
         laptop.setScale(1.5)
         self.addChild(laptop)
         
-        notebook.position = CGPoint(x: self.size.width*0.15, y: self.size.height*0.4)
+        notebook.position = CGPoint(x: self.size.width*0.32, y: self.size.height*0.4)
         notebook.zPosition = 1
         notebook.name = "notebook"
         notebook.setScale(1.2)
@@ -257,6 +261,9 @@ class GameGameScene: SKScene {
             if nodeITapped.name == "phone"{
                 awake -= 12
                 suspicion += 20
+                
+                cameraView.viewDidLoad()
+                
             }
             if nodeITapped.name == "laptop"{
                 awake += 12

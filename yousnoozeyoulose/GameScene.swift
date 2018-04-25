@@ -28,10 +28,13 @@ class GameScene: SKScene {
     var tlabel = SKLabelNode(fontNamed: "8BIT WONDER")
     
     
+    
+    
     var deskb = SKSpriteNode(imageNamed: "studentDeskGameScene")
     var clock = SKSpriteNode(imageNamed: "clockGameScene")
     var laptop = SKSpriteNode(imageNamed: "laptopGameScene")
     var phone = SKSpriteNode(imageNamed: "phoneGameScene")
+    var notebook = SKSpriteNode(imageNamed: "notebookGameScene")
     
     var whiteboard = SKSpriteNode(imageNamed:"whiteboard")
     var stick = SKSpriteNode(imageNamed:"stick2")
@@ -209,6 +212,7 @@ class GameScene: SKScene {
         tlabel.fontColor = SKColor.black
         tlabel.fontSize = 40
         tlabel.zPosition = 4
+        
         tlabel.position = CGPoint(x: self.size.width*0.120, y: self.size.height*0.54)
         self.addChild(tlabel)
         
@@ -238,19 +242,24 @@ class GameScene: SKScene {
         eye.alpha = 0.4
         eye.zRotation = 0.2
         self.addChild(eye)
-
+        //Clock
         clock.position = CGPoint(x:self.size.width*0.27, y: self.size.height*0.65)
         clock.zPosition = 2
         clock.setScale(1.5)
         self.addChild(clock)
-        //FIX
-//        phone.position = CGPoint(x:self.size.width * 0.6, y: self.size.height*0.2)
-//        phone.zPosition = 2
-//        self.addChild(phone)
-        //FIX
-//        laptop.position = CGPoint(x:self.size.width * 0.63, y: self.size.height*0.2)
-//        laptop.zPosition = 0
-//        self.addChild(laptop)
+        //Phone
+        phone.position = CGPoint(x:self.size.width * 0.55, y: self.size.height*0.3)
+        phone.zPosition = 3
+        self.addChild(phone)
+        //Laptop
+        laptop.position = CGPoint(x:self.size.width * 0.5, y: self.size.height*0.3)
+        laptop.zPosition = 3
+        self.addChild(laptop)
+        
+        //Notebook
+        notebook.position = CGPoint(x:self.size.width * 0.46, y: self.size.height*0.275)
+        notebook.zPosition = 3
+        self.addChild(notebook)
         
         classroom.position = CGPoint(x:self.size.width*0, y: self.size.height*0.5)
         classroom.zPosition = 0
