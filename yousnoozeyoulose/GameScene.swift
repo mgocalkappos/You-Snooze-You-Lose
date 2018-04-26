@@ -15,6 +15,7 @@ var suspicion = 0
 var awake = 0
 var time = true
 var started = true
+
 class GameScene: SKScene {
     //Creates timer
     var timer: Timer?
@@ -28,18 +29,17 @@ class GameScene: SKScene {
     var tlabel = SKLabelNode(fontNamed: "8BIT WONDER")
     
     
-    
-    
     var deskb = SKSpriteNode(imageNamed: "studentDeskGameScene")
+   // var deskb = SKSpriteNode(imageNamed: "board2")
     var clock = SKSpriteNode(imageNamed: "clockGameScene")
     var laptop = SKSpriteNode(imageNamed: "laptopGameScene")
-    var phone = SKSpriteNode(imageNamed: "phoneGameScene")
+   var phone = SKSpriteNode(imageNamed: "phoneGameScene")
     var notebook = SKSpriteNode(imageNamed: "notebookGameScene")
     
     var whiteboard = SKSpriteNode(imageNamed:"whiteboard")
     var stick = SKSpriteNode(imageNamed:"stick2")
     var comp = SKSpriteNode(imageNamed:"computer")
-    var eye = SKSpriteNode(imageNamed:"redcone1")
+    var eye = SKSpriteNode(imageNamed:"redcone")
     var classroom = SKSpriteNode(imageNamed: "classroom")
 
     var timeLeft = SKLabelNode(fontNamed: "8BIT WONDER")
@@ -121,6 +121,7 @@ class GameScene: SKScene {
         if awake <= 0 {
             awake = 0
         }
+        eye.zRotation += -CGFloat(1.degreesToRadians)
     }
 
     //Called every second to update count
@@ -220,6 +221,7 @@ class GameScene: SKScene {
         //RESIZE
         //Desk parts
         deskb.position = CGPoint(x: self.size.width/2, y: self.size.height*0.35)
+        deskb.anchorPoint = CGPoint(x: 0.5,y: 0.5)
         deskb.zPosition = 2
         deskb.setScale(1.5)
         deskb.name = "deskb"
@@ -247,19 +249,25 @@ class GameScene: SKScene {
         clock.zPosition = 2
         clock.setScale(1.5)
         self.addChild(clock)
+        
+        
         //Phone
-        phone.position = CGPoint(x:self.size.width * 0.55, y: self.size.height*0.3)
+        phone.position = CGPoint(x:self.size.width * 0.7, y: self.size.height*0.15)
         phone.zPosition = 3
+        phone.name = "phone"
         self.addChild(phone)
         //Laptop
-        laptop.position = CGPoint(x:self.size.width * 0.5, y: self.size.height*0.3)
+        laptop.position = CGPoint(x:self.size.width * 0.55, y: self.size.height*0.17)
         laptop.zPosition = 3
+        laptop.name = "laptop"
         self.addChild(laptop)
         
         //Notebook
-        notebook.position = CGPoint(x:self.size.width * 0.46, y: self.size.height*0.275)
+        notebook.position = CGPoint(x:self.size.width * 0.46, y: self.size.height*0.13)
         notebook.zPosition = 3
+        notebook.name = "notebook"
         self.addChild(notebook)
+ 
         
         classroom.position = CGPoint(x:self.size.width*0, y: self.size.height*0.5)
         classroom.zPosition = 0
@@ -323,7 +331,7 @@ class GameScene: SKScene {
             let nodeITapped = atPoint(pointOfTouch)
             
             //Detects when the desk is touched
-            if nodeITapped.name == "deskb"{
+            if nodeITapped.name == "deskb" || nodeITapped.name == "laptop" || nodeITapped.name == "phone" || nodeITapped.name == "notebook"{
                 updateTimer(timer: timer!)
                 
                 //Fades the scene to switch over to the desk view

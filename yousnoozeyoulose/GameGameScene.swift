@@ -15,16 +15,21 @@ extension Int {
     var radiansToDegrees: Double { return Double(self) * 180 / M_PI }
 }
 class GameGameScene: SKScene {
+    
+    let sn = 1
+    let p = -1
+    let l = -1
+    let n = -1
 
     var cameraView: camera!
     
-    
-     let snack = SKSpriteNode(imageNamed: "snack3")
+     let snack = SKSpriteNode(imageNamed: "candyGameScene")
      let phone = SKSpriteNode(imageNamed: "phone3")
      let laptop = SKSpriteNode(imageNamed: "laptopGGS")
      let notebook = SKSpriteNode(imageNamed: "notebookGGS")
     var slabel = SKLabelNode()
     var tlabel = SKLabelNode()
+  
     
     var finger = SKSpriteNode(imageNamed:"finger")
 
@@ -82,28 +87,32 @@ class GameGameScene: SKScene {
             self.addChild(background)
             
         }
+        snack.anchorPoint = CGPoint(x: 0.5,y: 0.5)
         snack.position = CGPoint(x: self.size.width*0.5, y: self.size.height*0.7)
         snack.zPosition = 1
         snack.name = "snack"
-        snack.setScale(1.5)
+        //snack.setScale(1.5)
         self.addChild(snack)
         
+        //phone.anchorPoint = CGPoint(x: 0.5,y: 0.5)
         phone.position = CGPoint(x: self.size.width*0.8, y: self.size.height*0.5)
         phone.zPosition = 1
         phone.name = "phone"
-        phone.setScale(2)
+        //phone.setScale(2)
         self.addChild(phone)
         
-        laptop.position = CGPoint(x: self.size.width*0.4, y: self.size.height*0.32)
+        //laptop.anchorPoint = CGPoint(x: 0.5,y: 0.5)
+        laptop.position = CGPoint(x: self.size.width*0.5, y: self.size.height*0.32)
         laptop.zPosition = 1
         laptop.name = "laptop"
-        laptop.setScale(1.5)
+       // laptop.setScale(1.5)
         self.addChild(laptop)
         
-        notebook.position = CGPoint(x: self.size.width*0.32, y: self.size.height*0.4)
+        //notebook.anchorPoint = CGPoint(x: 0.5,y: 0.5)
+        notebook.position = CGPoint(x: self.size.width*0.15, y: self.size.height*0.4)
         notebook.zPosition = 1
         notebook.name = "notebook"
-        notebook.setScale(1.2)
+        //notebook.setScale(1.2)
         self.addChild(notebook)
         
         //suspicion bar
@@ -204,7 +213,7 @@ class GameGameScene: SKScene {
     
     func check(){
 
-        if awake > 100 || suspicion > 100 {
+        if awake >= 100 || suspicion >= 100 {
             print("game over")
             runGameOver()
         }
@@ -244,6 +253,52 @@ class GameGameScene: SKScene {
         
     }
     
+    func spawnTMinusStat(spawnPosition: CGPoint, statValue: Int){
+          let stat = SKLabelNode()
+        var strings = String(statValue)
+        stat.fontSize = 100
+        stat.fontColor = SKColor.red
+        stat.fontName = "AvenirNext-Bold"
+        stat.text = "- \(strings)"
+        stat.position = spawnPosition
+        stat.zPosition = 3
+        stat.setScale(0.5)
+        self.addChild(stat)
+        
+        let scaleIn = SKAction.scale(to: 1, duration: 0.4)
+        let fadeOut = SKAction.fadeOut(withDuration: 0.4)
+        let delete = SKAction.removeFromParent()
+        
+        let statSequence = SKAction.sequence([scaleIn, fadeOut, delete])
+        
+        stat.run(statSequence)
+        
+    }
+    
+    func spawnTPlusStat(spawnPosition: CGPoint, statValue: Int){
+          let stat = SKLabelNode()
+        var strings = String(statValue)
+        stat.fontSize = 100
+        stat.fontColor = SKColor.red
+        stat.fontName = "AvenirNext-Bold"
+        stat.text = "+ \(strings)"
+        stat.position = spawnPosition
+        stat.zPosition = 3
+        stat.setScale(0.5)
+        self.addChild(stat)
+        
+        let scaleIn = SKAction.scale(to: 1, duration: 0.3)
+        let fadeOut = SKAction.fadeOut(withDuration: 0.4)
+        let delete = SKAction.removeFromParent()
+        
+        let statSequence = SKAction.sequence([scaleIn, fadeOut, delete])
+        
+        stat.run(statSequence)
+        
+    }
+    
+    
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         if currentGameState == gameState.afterGame{
@@ -257,21 +312,45 @@ class GameGameScene: SKScene {
             if nodeITapped.name == "snack"{
                 awake -= 5
                 suspicion += 7
+                
+                if(sn < 0){
+                    spawnTMinusStat(spawnPosition: snack.position, statValue: 7)
+                } else if(sn > 0){
+                    spawnTPlusStat(spawnPosition: snack.position, statValue: 7)
+                }
             }
             if nodeITapped.name == "phone"{
                 awake -= 12
                 suspicion += 20
                 
-                cameraView.viewDidLoad()
+                if(p < 0){
+                    spawnTMinusStat(spawnPosition: phone.position, statValue: 20)
+                } else if(p > 0){
+                    spawnTPlusStat(spawnPosition: phone.position, statValue: 20)
+                }
+                
+              //  cameraView.viewDidLoad()
                 
             }
             if nodeITapped.name == "laptop"{
                 awake += 12
                 suspicion -= 7
+                
+                if(l < 0){
+                    spawnTMinusStat(spawnPosition: laptop.position, statValue: 7)
+                } else if(l > 0){
+                    spawnTPlusStat(spawnPosition: laptop.position, statValue: 7)
+                }
             }
             if nodeITapped.name == "notebook"{
                 awake += 20
                 suspicion -= 15
+                
+                if(n < 0){
+                    spawnTMinusStat(spawnPosition: notebook.position, statValue: 15)
+                } else if(n > 0){
+                    spawnTPlusStat(spawnPosition: notebook.position, statValue: 15)
+                }
             }
             
             if nodeITapped.name == "backButton"{
