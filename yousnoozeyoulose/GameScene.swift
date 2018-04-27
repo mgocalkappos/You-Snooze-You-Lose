@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-var count = 180
+var count = 90
 var hiScore = 0
 var suspicion = 0
 var awake = 0
@@ -21,7 +21,7 @@ class GameScene: SKScene {
     var timer: Timer?
     
     //Creates awake and suspicion bar and desk
-    var s = SKSpriteNode(imageNamed: "redbox")
+    var s = SKSpriteNode(imageNamed: "bluerect")
     var a = SKSpriteNode(imageNamed: "redbox")
     var outline = SKSpriteNode(imageNamed:"outlinebar")
     var outline2 = SKSpriteNode(imageNamed:"outlinebar")
@@ -121,7 +121,7 @@ class GameScene: SKScene {
         if awake <= 0 {
             awake = 0
         }
-        eye.zRotation += -CGFloat(1.degreesToRadians)
+        eye.zRotation += -CGFloat(5.degreesToRadians)
     }
 
     //Called every second to update count
@@ -129,7 +129,7 @@ class GameScene: SKScene {
         if(count > 0){
             print("\(awake)")
             count -= 1
-            awake += 3
+            awake += 2
             check()
         }
         timeLeft.text = secondToMinute(seconds: count)
@@ -220,7 +220,7 @@ class GameScene: SKScene {
         
         //RESIZE
         //Desk parts
-        deskb.position = CGPoint(x: self.size.width/2, y: self.size.height*0.35)
+        deskb.position = CGPoint(x: self.size.width*0.57, y: self.size.height*0.135)
         deskb.anchorPoint = CGPoint(x: 0.5,y: 0.5)
         deskb.zPosition = 2
         deskb.setScale(1.5)
@@ -282,6 +282,7 @@ class GameScene: SKScene {
         timeLeft.position = CGPoint(x: self.size.width*0.74, y: self.size.height*0.78)
         self.addChild(timeLeft)
         
+
     }
     
     //Called when the game ends to switch the scene to the gameover layout
@@ -340,6 +341,7 @@ class GameScene: SKScene {
                 let myTransition = SKTransition.fade(withDuration: 0.5)
                 self.view!.presentScene(sceneToMoveTo, transition: myTransition)
             }
+            
             
         }
 

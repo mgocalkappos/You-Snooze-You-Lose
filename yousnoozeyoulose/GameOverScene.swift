@@ -80,7 +80,7 @@ class GameOverScene: SKScene{
                 started = true
                 awake = 0
                 suspicion = 0
-                count = 180
+                count = 90
                 let newScene = GameScene(size: self.size)
                 newScene.scaleMode = self.scaleMode
                 let animation = SKTransition.fade(withDuration: 0.5)
@@ -91,7 +91,7 @@ class GameOverScene: SKScene{
                 started = true
                 awake = 0
                 suspicion = 0
-                count = 180
+                count = 90
                 let newScene = MainMenuScene(size: self.size)
                 newScene.scaleMode = self.scaleMode
                 let animation = SKTransition.fade(withDuration: 0.5)

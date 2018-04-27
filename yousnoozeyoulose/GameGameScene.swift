@@ -16,12 +16,23 @@ extension Int {
 }
 class GameGameScene: SKScene {
     
+    var timeLeft = SKLabelNode(fontNamed: "8BIT WONDER")
+    
     let sn = 1
     let p = -1
     let l = -1
     let n = -1
+    
+    var snackA = 5
+    var snackS = 8
+    var phoneA = 12
+    var phoneS = 20
+    var laptopA = 12
+    var laptopS = 8
+    var notebookA = 20
+    var notebookS = 16
 
-    var cameraView: camera!
+    var multiplier: Int = 1
     
      let snack = SKSpriteNode(imageNamed: "candyGameScene")
      let phone = SKSpriteNode(imageNamed: "phone3")
@@ -38,7 +49,7 @@ class GameGameScene: SKScene {
     
     var timer: Timer?
     var timer2: Timer?
-    var s = SKSpriteNode(imageNamed: "redbox")
+    var s = SKSpriteNode(imageNamed: "bluerect")
     var a = SKSpriteNode(imageNamed: "redbox")
     var u = SKSpriteNode(imageNamed: "urgency")
     
@@ -91,7 +102,7 @@ class GameGameScene: SKScene {
         snack.position = CGPoint(x: self.size.width*0.5, y: self.size.height*0.7)
         snack.zPosition = 1
         snack.name = "snack"
-        //snack.setScale(1.5)
+        snack.setScale(2)
         self.addChild(snack)
         
         //phone.anchorPoint = CGPoint(x: 0.5,y: 0.5)
@@ -159,10 +170,12 @@ class GameGameScene: SKScene {
         u.position = CGPoint(x: self.size.width*0.25, y: self.size.height*0.75)
         u.zPosition = 1
         
-      //  let oneRevolution:SKAction = SKAction.rotate(byAngle: -CGFloat.pi * 2, duration: 3.5)
-       // let repeatRotation:SKAction = SKAction.repeatForever(oneRevolution)
+        timeLeft.fontSize = 60
+        timeLeft.fontColor = SKColor.black
+        timeLeft.zPosition = 3
+        timeLeft.position = CGPoint(x: self.size.width*0.85, y: self.size.height*0.15)
+        self.addChild(timeLeft)
         
-      //  u.run(repeatRotation)
         self.addChild(u)
     
         finger.position = CGPoint(x:self.size.width*0.33, y:self.size.height*0.85)
@@ -196,20 +209,42 @@ class GameGameScene: SKScene {
             awake = 0
         }
         u.zRotation += -CGFloat(1.degreesToRadians)
-        print(u.zRotation)
+        print(NSLog("%f",u.zRotation))
+        
+        if(u.zRotation <= -3.2 && u.zRotation >= -4.8){
+            
+            multiplier = 2
+            
+        } else {
+            multiplier = 1
+        }
+        if(u.zRotation <= -6.4){
+            u.zRotation = 0
+        }
+        
     }
     
     func updateCount(){
         if(count > 0){
             
-            print("\(awake)")
+            print(NSLog("%f", awake))
             count -= 1
-            awake += 3
+            awake += 2
             check()
         }
+        timeLeft.text = secondToMinute(seconds: count)
 
     }
     
+    func secondToMinute(seconds: Int) -> String {
+        var minutes = (seconds % 3600) / 60
+        var seconds = (seconds % 3600) % 60
+        if(seconds < 10) {
+            
+            
+        }
+        return "\(minutes) : \(seconds)"
+    }
     
     func check(){
 
@@ -253,50 +288,78 @@ class GameGameScene: SKScene {
         
     }
     
-    func spawnTMinusStat(spawnPosition: CGPoint, statValue: Int){
-          let stat = SKLabelNode()
-        var strings = String(statValue)
+    func spawnTPlusMinusStat(spawnPosition: CGPoint, susValue: Int, tireValue: Int){
+        let stat = SKLabelNode()
+        let tstat = SKLabelNode()
+        let blank = SKLabelNode()
+        var sus = String(susValue)
+        var tire = String(tireValue)
         stat.fontSize = 100
         stat.fontColor = SKColor.red
         stat.fontName = "AvenirNext-Bold"
-        stat.text = "- \(strings)"
+        stat.text = "+ \(tire)"
         stat.position = spawnPosition
         stat.zPosition = 3
         stat.setScale(0.5)
         self.addChild(stat)
+        self.addChild(blank)
+        tstat.fontSize = 100
+        tstat.fontColor = SKColor.blue
+        tstat.fontName = "AvenirNext-Bold"
+        tstat.text = "       - \(sus)"
+        tstat.position = CGPoint(x: spawnPosition.x, y: (spawnPosition.y - spawnPosition.y*0.15))
+        tstat.zPosition = 3
+        tstat.setScale(0.5)
+        self.addChild(tstat)
         
-        let scaleIn = SKAction.scale(to: 1, duration: 0.4)
+        let scaleIn = SKAction.scale(to: 1, duration: 0.15)
         let fadeOut = SKAction.fadeOut(withDuration: 0.4)
+        
         let delete = SKAction.removeFromParent()
         
         let statSequence = SKAction.sequence([scaleIn, fadeOut, delete])
+        let tstatSequence = SKAction.sequence([scaleIn, fadeOut, delete])
         
         stat.run(statSequence)
-        
+        tstat.run(tstatSequence)
     }
     
-    func spawnTPlusStat(spawnPosition: CGPoint, statValue: Int){
-          let stat = SKLabelNode()
-        var strings = String(statValue)
+    func spawnTMinusPlusStat(spawnPosition: CGPoint, susValue: Int, tireValue: Int){
+        let stat = SKLabelNode()
+        let tstat = SKLabelNode()
+        let blank = SKLabelNode()
+        var sus = String(susValue)
+        var tire = String(tireValue)
         stat.fontSize = 100
         stat.fontColor = SKColor.red
         stat.fontName = "AvenirNext-Bold"
-        stat.text = "+ \(strings)"
+        stat.text = "- \(tire)"
         stat.position = spawnPosition
         stat.zPosition = 3
         stat.setScale(0.5)
         self.addChild(stat)
+        self.addChild(blank)
+        tstat.fontSize = 100
+        tstat.fontColor = SKColor.blue
+        tstat.fontName = "AvenirNext-Bold"
+        tstat.text = "       + \(sus)"
+        tstat.position = CGPoint(x: spawnPosition.x, y: (spawnPosition.y - spawnPosition.y*0.15))
+        tstat.zPosition = 3
+        tstat.setScale(0.5)
+        self.addChild(tstat)
         
-        let scaleIn = SKAction.scale(to: 1, duration: 0.3)
+        let scaleIn = SKAction.scale(to: 1, duration: 0.15)
         let fadeOut = SKAction.fadeOut(withDuration: 0.4)
+        
         let delete = SKAction.removeFromParent()
         
         let statSequence = SKAction.sequence([scaleIn, fadeOut, delete])
+        let tstatSequence = SKAction.sequence([scaleIn, fadeOut, delete])
         
         stat.run(statSequence)
+        tstat.run(tstatSequence)
         
     }
-    
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -310,47 +373,71 @@ class GameGameScene: SKScene {
             let nodeITapped = atPoint(pointOfTouch)
             
             if nodeITapped.name == "snack"{
-                awake -= 5
-                suspicion += 7
+                awake -= snackA
+                suspicion += multiplier*snackS
+                
+                var checkS = snackS
+                if(u.zRotation <= -3.2 && u.zRotation >= -4.8){
+                    
+                    checkS *= 2
+                    
+                } else {
+                    checkS *= 1
+                }
                 
                 if(sn < 0){
-                    spawnTMinusStat(spawnPosition: snack.position, statValue: 7)
+                    spawnTPlusMinusStat(spawnPosition: snack.position, susValue: checkS, tireValue: snackA)
                 } else if(sn > 0){
-                    spawnTPlusStat(spawnPosition: snack.position, statValue: 7)
+                    spawnTMinusPlusStat(spawnPosition: snack.position, susValue: checkS,tireValue: snackA)
                 }
             }
             if nodeITapped.name == "phone"{
-                awake -= 12
-                suspicion += 20
+                awake -= phoneA
+                suspicion += multiplier*phoneS
+                
+                var checkS = phoneS
+                if(u.zRotation <= -3.2 && u.zRotation >= -4.8){
+                    
+                    checkS *= 2
+                    
+                } else {
+                    checkS *= 1
+                }
                 
                 if(p < 0){
-                    spawnTMinusStat(spawnPosition: phone.position, statValue: 20)
+                    spawnTPlusMinusStat(spawnPosition: phone.position, susValue: checkS, tireValue: phoneA)
                 } else if(p > 0){
-                    spawnTPlusStat(spawnPosition: phone.position, statValue: 20)
+                    spawnTMinusPlusStat(spawnPosition: phone.position, susValue: checkS, tireValue:  phoneA)
                 }
                 
               //  cameraView.viewDidLoad()
                 
             }
             if nodeITapped.name == "laptop"{
-                awake += 12
-                suspicion -= 7
+                awake += laptopA
+                suspicion -= multiplier*laptopS
+                
+                var checkS = laptopS
+                if(u.zRotation <= -3.2 && u.zRotation >= -4.8){
+                    
+                    checkS *= 2
+                    
+                } else {
+                    checkS *= 1
+                }
                 
                 if(l < 0){
-                    spawnTMinusStat(spawnPosition: laptop.position, statValue: 7)
+                    spawnTPlusMinusStat(spawnPosition: laptop.position, susValue: checkS, tireValue: laptopA)
                 } else if(l > 0){
-                    spawnTPlusStat(spawnPosition: laptop.position, statValue: 7)
+                    spawnTMinusPlusStat(spawnPosition: laptop.position, susValue: checkS, tireValue: laptopA)
                 }
             }
             if nodeITapped.name == "notebook"{
-                awake += 20
-                suspicion -= 15
-                
-                if(n < 0){
-                    spawnTMinusStat(spawnPosition: notebook.position, statValue: 15)
-                } else if(n > 0){
-                    spawnTPlusStat(spawnPosition: notebook.position, statValue: 15)
-                }
+                updateTimer(timer: timer!)
+                let sceneToMoveTo = drawing(size: self.size) //Change to drawing Scene
+                sceneToMoveTo.scaleMode = self.scaleMode
+                let myTransition = SKTransition.fade(withDuration: 0.5)
+                self.view!.presentScene(sceneToMoveTo, transition: myTransition)
             }
             
             if nodeITapped.name == "backButton"{
@@ -360,6 +447,7 @@ class GameGameScene: SKScene {
                 let myTransition = SKTransition.fade(withDuration: 0.5)
                 self.view!.presentScene(sceneToMoveTo, transition: myTransition)
             }
+            
         }
     }
     

@@ -21,6 +21,7 @@ class MainMenuScene: SKScene {
         title.fontColor = SKColor.black
         title.position = CGPoint(x: self.size.width*0.5, y: self.size.height*0.8)
         title.zPosition = 2
+        title.name = "test"
         self.addChild(title)
         
         let pencil1 = SKSpriteNode(imageNamed: "pencil13")
@@ -101,6 +102,15 @@ class MainMenuScene: SKScene {
                 let myTransition = SKTransition.fade(withDuration: 0.5)
                 self.view!.presentScene(sceneToMoveTo, transition: myTransition)
  
+            }
+            
+            if nodeITapped.name == "test"{
+                
+                let sceneToMoveTo = drawing(size: self.size) //Change to shopScene
+                sceneToMoveTo.scaleMode = self.scaleMode
+                let myTransition = SKTransition.fade(withDuration: 0.5)
+                self.view!.presentScene(sceneToMoveTo, transition: myTransition)
+                
             }
             
             

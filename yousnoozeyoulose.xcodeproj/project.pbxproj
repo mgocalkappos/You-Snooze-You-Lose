@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F01C4132092C0A500C00E31 /* bluerect.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F01C4122092C0A400C00E31 /* bluerect.png */; };
+		2F01C4152092CB5700C00E31 /* drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F01C4142092CB5700C00E31 /* drawing.swift */; };
+		2F01C4172092D7D600C00E31 /* dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F01C4162092D7D500C00E31 /* dot.png */; };
 		2F2A9901203B2CCC000E8670 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2A9900203B2CCC000E8670 /* AppDelegate.swift */; };
 		2F2A9903203B2CCD000E8670 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2F2A9902203B2CCD000E8670 /* GameScene.sks */; };
 		2F2A9905203B2CCD000E8670 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2F2A9904203B2CCD000E8670 /* Actions.sks */; };
@@ -47,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F01C4122092C0A400C00E31 /* bluerect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bluerect.png; path = Images.xcassets/bluerect.png; sourceTree = "<group>"; };
+		2F01C4142092CB5700C00E31 /* drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawing.swift; sourceTree = "<group>"; };
+		2F01C4162092D7D500C00E31 /* dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot.png; sourceTree = "<group>"; };
 		2F2A98FD203B2CCC000E8670 /* yousnoozeyoulose.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yousnoozeyoulose.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F2A9900203B2CCC000E8670 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F2A9902203B2CCD000E8670 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -121,10 +127,13 @@
 		2F2A98FF203B2CCC000E8670 /* yousnoozeyoulose */ = {
 			isa = PBXGroup;
 			children = (
+				2F01C4122092C0A400C00E31 /* bluerect.png */,
+				2F01C4162092D7D500C00E31 /* dot.png */,
 				F2D7E057207C687D00964C73 /* Images.xcassets */,
 				2F2A9900203B2CCC000E8670 /* AppDelegate.swift */,
 				2F2A9902203B2CCD000E8670 /* GameScene.sks */,
 				2F2A9906203B2CCD000E8670 /* GameScene.swift */,
+				2F01C4142092CB5700C00E31 /* drawing.swift */,
 				2F2A9904203B2CCD000E8670 /* Actions.sks */,
 				F269BDCE207AD26C005F4856 /* Fonts */,
 				2FB24219204B6351001F0800 /* GameGameScene.swift */,
@@ -236,7 +245,7 @@
 				TargetAttributes = {
 					2F2A98FC203B2CCC000E8670 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = PFJ2RL5M47;
+						DevelopmentTeam = NV94MNCXXQ;
 						ProvisioningStyle = Automatic;
 					};
 					2F2A9916203B2CCD000E8670 = {
@@ -283,6 +292,8 @@
 				F2D7E058207C687D00964C73 /* Images.xcassets in Resources */,
 				2F2A9905203B2CCD000E8670 /* Actions.sks in Resources */,
 				F268FA55205C398D00C9B690 /* Off Limits.wav in Resources */,
+				2F01C4132092C0A500C00E31 /* bluerect.png in Resources */,
+				2F01C4172092D7D600C00E31 /* dot.png in Resources */,
 				F268FA53205C294900C9B690 /* LaunchScreen.storyboard in Resources */,
 				F268FA51205C294300C9B690 /* Main.storyboard in Resources */,
 			);
@@ -311,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F01C4152092CB5700C00E31 /* drawing.swift in Sources */,
 				2FB2421A204B6351001F0800 /* GameGameScene.swift in Sources */,
 				2F7247A3203F556D006EDE47 /* ShopScene.swift in Sources */,
 				2F2A9907203B2CCD000E8670 /* GameScene.swift in Sources */,
@@ -454,7 +466,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = PFJ2RL5M47;
+				DEVELOPMENT_TEAM = NV94MNCXXQ;
 				INFOPLIST_FILE = yousnoozeyoulose/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -469,7 +481,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = PFJ2RL5M47;
+				DEVELOPMENT_TEAM = NV94MNCXXQ;
 				INFOPLIST_FILE = yousnoozeyoulose/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
