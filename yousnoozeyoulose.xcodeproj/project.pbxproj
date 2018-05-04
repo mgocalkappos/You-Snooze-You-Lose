@@ -22,8 +22,8 @@
 		2F7247A1203E9C89006EDE47 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7247A0203E9C89006EDE47 /* GameOverScene.swift */; };
 		2F7247A3203F556D006EDE47 /* ShopScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7247A2203F556D006EDE47 /* ShopScene.swift */; };
 		2FB2421A204B6351001F0800 /* GameGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB24219204B6351001F0800 /* GameGameScene.swift */; };
-		F268FA51205C294300C9B690 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F268FA50205C294200C9B690 /* Main.storyboard */; };
-		F268FA53205C294900C9B690 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F268FA52205C294800C9B690 /* LaunchScreen.storyboard */; };
+		F259FEDC209CDCFA0041C4F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F259FEDB209CDCFA0041C4F7 /* Main.storyboard */; };
+		F259FEEA209CDD0A0041C4F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F259FEE9209CDD0A0041C4F7 /* LaunchScreen.storyboard */; };
 		F268FA55205C398D00C9B690 /* Off Limits.wav in Resources */ = {isa = PBXBuildFile; fileRef = F268FA54205C398D00C9B690 /* Off Limits.wav */; };
 		F269BDD0207AD282005F4856 /* 8-BIT-WONDER.TTF in Resources */ = {isa = PBXBuildFile; fileRef = F269BDCF207AD281005F4856 /* 8-BIT-WONDER.TTF */; };
 		F269BDD1207AD282005F4856 /* 8-BIT-WONDER.TTF in Resources */ = {isa = PBXBuildFile; fileRef = F269BDCF207AD281005F4856 /* 8-BIT-WONDER.TTF */; };
@@ -71,8 +71,8 @@
 		2F7247A0203E9C89006EDE47 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		2F7247A2203F556D006EDE47 /* ShopScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopScene.swift; sourceTree = "<group>"; };
 		2FB24219204B6351001F0800 /* GameGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameGameScene.swift; sourceTree = "<group>"; };
-		F268FA50205C294200C9B690 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		F268FA52205C294800C9B690 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F259FEDB209CDCFA0041C4F7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F259FEE9209CDD0A0041C4F7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F268FA54205C398D00C9B690 /* Off Limits.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Off Limits.wav"; sourceTree = "<group>"; };
 		F269BDCF207AD281005F4856 /* 8-BIT-WONDER.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "8-BIT-WONDER.TTF"; sourceTree = "<group>"; };
 		F2D4B25D208AC0BB0032DA8F /* camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = camera.swift; sourceTree = "<group>"; };
@@ -137,10 +137,10 @@
 				2F2A9904203B2CCD000E8670 /* Actions.sks */,
 				F269BDCE207AD26C005F4856 /* Fonts */,
 				2FB24219204B6351001F0800 /* GameGameScene.swift */,
+				F259FEDB209CDCFA0041C4F7 /* Main.storyboard */,
 				F2D4B25D208AC0BB0032DA8F /* camera.swift */,
-				F268FA50205C294200C9B690 /* Main.storyboard */,
+				F259FEE9209CDD0A0041C4F7 /* LaunchScreen.storyboard */,
 				2F7247A0203E9C89006EDE47 /* GameOverScene.swift */,
-				F268FA52205C294800C9B690 /* LaunchScreen.storyboard */,
 				2F2A9908203B2CCD000E8670 /* GameViewController.swift */,
 				2F2A9934203B2D79000E8670 /* MainMenuScene.swift */,
 				F268FA54205C398D00C9B690 /* Off Limits.wav */,
@@ -245,7 +245,7 @@
 				TargetAttributes = {
 					2F2A98FC203B2CCC000E8670 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = NV94MNCXXQ;
+						DevelopmentTeam = PFJ2RL5M47;
 						ProvisioningStyle = Automatic;
 					};
 					2F2A9916203B2CCD000E8670 = {
@@ -287,15 +287,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F259FEEA209CDD0A0041C4F7 /* LaunchScreen.storyboard in Resources */,
 				2F2A9903203B2CCD000E8670 /* GameScene.sks in Resources */,
 				F269BDD0207AD282005F4856 /* 8-BIT-WONDER.TTF in Resources */,
 				F2D7E058207C687D00964C73 /* Images.xcassets in Resources */,
+				F259FEDC209CDCFA0041C4F7 /* Main.storyboard in Resources */,
 				2F2A9905203B2CCD000E8670 /* Actions.sks in Resources */,
 				F268FA55205C398D00C9B690 /* Off Limits.wav in Resources */,
 				2F01C4132092C0A500C00E31 /* bluerect.png in Resources */,
 				2F01C4172092D7D600C00E31 /* dot.png in Resources */,
-				F268FA53205C294900C9B690 /* LaunchScreen.storyboard in Resources */,
-				F268FA51205C294300C9B690 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,7 +466,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NV94MNCXXQ;
+				DEVELOPMENT_TEAM = PFJ2RL5M47;
 				INFOPLIST_FILE = yousnoozeyoulose/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -481,7 +481,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NV94MNCXXQ;
+				DEVELOPMENT_TEAM = PFJ2RL5M47;
 				INFOPLIST_FILE = yousnoozeyoulose/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
