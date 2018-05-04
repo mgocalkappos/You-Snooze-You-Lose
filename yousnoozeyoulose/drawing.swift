@@ -38,8 +38,6 @@ class drawing: SKScene {
 
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-
-        
         for touch: AnyObject in touches{
             let pointOfTouch = touch.location(in: self)
             let nodeITapped = atPoint(pointOfTouch)
@@ -87,13 +85,8 @@ class drawing: SKScene {
             }
 
         }
-
- 
-        
+    
     }
-    
-    
-    
     
 }
 

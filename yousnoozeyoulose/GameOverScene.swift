@@ -11,8 +11,8 @@ import SpriteKit
 
 class GameOverScene: SKScene{
     
-    let restartLabel = SKLabelNode()
-    let mainMenuLabel = SKLabelNode()
+    let restartLabel = SKLabelNode(fontNamed: "8BIT WONDER")
+    let mainMenuLabel = SKLabelNode(fontNamed: "8BIT WONDER")
     
     override func didMove(to view: SKView) {
         let background = SKSpriteNode(imageNamed: "background")
@@ -20,7 +20,7 @@ class GameOverScene: SKScene{
         background.zPosition = 0
         self.addChild(background)
         
-        let gameOverLabel = SKLabelNode()
+        let gameOverLabel = SKLabelNode(fontNamed: "8BIT WONDER")
         gameOverLabel.text = "Game Over"
         gameOverLabel.fontSize = 100
         gameOverLabel.fontColor = SKColor.white
@@ -80,7 +80,7 @@ class GameOverScene: SKScene{
                 started = true
                 awake = 0
                 suspicion = 0
-                count = 90
+                count = 60
                 let newScene = GameScene(size: self.size)
                 newScene.scaleMode = self.scaleMode
                 let animation = SKTransition.fade(withDuration: 0.5)
@@ -91,7 +91,7 @@ class GameOverScene: SKScene{
                 started = true
                 awake = 0
                 suspicion = 0
-                count = 90
+                count = 60
                 let newScene = MainMenuScene(size: self.size)
                 newScene.scaleMode = self.scaleMode
                 let animation = SKTransition.fade(withDuration: 0.5)

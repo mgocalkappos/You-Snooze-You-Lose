@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-var count = 90
+var count = 60
 var hiScore = 0
 var suspicion = 0
 var awake = 0
@@ -36,8 +36,13 @@ class GameScene: SKScene {
    var phone = SKSpriteNode(imageNamed: "phoneGameScene")
     var notebook = SKSpriteNode(imageNamed: "notebookGameScene")
     
-    var whiteboard = SKSpriteNode(imageNamed:"whiteboard")
-    var stick = SKSpriteNode(imageNamed:"stick2")
+    var whiteboard = SKSpriteNode(imageNamed:"chalkboard")
+    
+    
+    var professor = SKSpriteNode(imageNamed: "talkprof1")
+    
+    
+    
     var comp = SKSpriteNode(imageNamed:"computer")
     var eye = SKSpriteNode(imageNamed:"redcone")
     var classroom = SKSpriteNode(imageNamed: "classroom")
@@ -111,6 +116,8 @@ class GameScene: SKScene {
         
     }
     
+    var rotate = -CGFloat(1.degreesToRadians)
+    
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
             a.size = CGSize(width: awake*3, height: 50)
@@ -121,7 +128,10 @@ class GameScene: SKScene {
         if awake <= 0 {
             awake = 0
         }
-        eye.zRotation += -CGFloat(5.degreesToRadians)
+        
+         print(NSLog("%f",eye.zRotation))
+            eye.zRotation += rotate
+
     }
 
     //Called every second to update count
@@ -217,8 +227,7 @@ class GameScene: SKScene {
         tlabel.position = CGPoint(x: self.size.width*0.120, y: self.size.height*0.54)
         self.addChild(tlabel)
         
-        
-        //RESIZE
+
         //Desk parts
         deskb.position = CGPoint(x: self.size.width*0.57, y: self.size.height*0.135)
         deskb.anchorPoint = CGPoint(x: 0.5,y: 0.5)
@@ -227,15 +236,16 @@ class GameScene: SKScene {
         deskb.name = "deskb"
         self.addChild(deskb)
         
-        whiteboard.position = CGPoint(x:self.size.width*0.6, y: self.size.height*0.7)
-        whiteboard.zPosition = 2
+        whiteboard.position = CGPoint(x:self.size.width*0.43, y: self.size.height*0.64)
+        whiteboard.zPosition = 1
         whiteboard.name = "whiteboard"
         self.addChild(whiteboard)
 
-        stick.position = CGPoint(x:self.size.width*0.9, y: self.size.height*0.5)
-        stick.zPosition = 2
-        stick.name = "stick"
-        self.addChild(stick)
+
+        professor.position = CGPoint(x:self.size.width*0.87, y: self.size.height*0.45)
+        professor.zPosition = 2
+        professor.name = "stick"
+        self.addChild(professor)
 
         eye.anchorPoint = CGPoint(x:0.5, y: 1)
         eye.position = CGPoint(x:self.size.width*0.895, y: self.size.height*0.6)
@@ -277,7 +287,7 @@ class GameScene: SKScene {
         
         
         timeLeft.fontSize = 60
-        timeLeft.fontColor = SKColor.black
+        timeLeft.fontColor = SKColor.white
         timeLeft.zPosition = 3
         timeLeft.position = CGPoint(x: self.size.width*0.74, y: self.size.height*0.78)
         self.addChild(timeLeft)

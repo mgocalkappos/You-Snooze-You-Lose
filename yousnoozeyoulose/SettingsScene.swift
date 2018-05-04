@@ -17,7 +17,7 @@ class SettingsScene: SKScene {
         background.zPosition = 0
         self.addChild(background)
         
-        let settingLabel = SKLabelNode()
+        let settingLabel = SKLabelNode(fontNamed: "8BIT WONDER")
         settingLabel.text = "Settings"
         settingLabel.fontSize = 70
         settingLabel.fontColor = SKColor.white
@@ -25,7 +25,7 @@ class SettingsScene: SKScene {
         settingLabel.zPosition = 1
         self.addChild(settingLabel)
         
-        let music = SKLabelNode()
+        let music = SKLabelNode(fontNamed: "8BIT WONDER")
         music.text = "Toggle Music"
         music.fontSize = 60
         music.fontColor = SKColor.white
@@ -34,7 +34,7 @@ class SettingsScene: SKScene {
         music.name = "musicButton"
         self.addChild(music)
         
-        let backtoMain = SKLabelNode()
+        let backtoMain = SKLabelNode(fontNamed: "8BIT WONDER")
         backtoMain.text = "BACK"
         backtoMain.fontSize = 50
         backtoMain.fontColor = SKColor.white

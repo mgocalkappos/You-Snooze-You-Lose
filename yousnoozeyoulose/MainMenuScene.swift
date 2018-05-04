@@ -15,7 +15,7 @@ class MainMenuScene: SKScene {
         
         
         
-        let title = SKLabelNode()
+        let title = SKLabelNode(fontNamed: "8BIT WONDER")
         title.text = "You Snooze You Lose"
         title.fontSize = 75
         title.fontColor = SKColor.black
@@ -29,7 +29,7 @@ class MainMenuScene: SKScene {
         pencil1.zPosition = 1
         self.addChild(pencil1)
         
-        let play = SKLabelNode()
+        let play = SKLabelNode(fontNamed: "8BIT WONDER")
         play.text = "PLAY"
         play.fontSize = 70
         play.fontColor = SKColor.black
@@ -44,7 +44,7 @@ class MainMenuScene: SKScene {
         pencil2.zPosition = 1
         self.addChild(pencil2)
         
-        let settings = SKLabelNode()
+        let settings = SKLabelNode(fontNamed: "8BIT WONDER")
         settings.text = "SETTINGS"
         settings.fontSize = 70
         settings.fontColor = SKColor.black
@@ -58,7 +58,7 @@ class MainMenuScene: SKScene {
         eraser.zPosition = 1
         self.addChild(eraser)
         
-        let shop = SKLabelNode()
+        let shop = SKLabelNode(fontNamed: "8BIT WONDER")
         shop.text = "SHOP"
         shop.fontSize = 70
         shop.fontColor = SKColor.black

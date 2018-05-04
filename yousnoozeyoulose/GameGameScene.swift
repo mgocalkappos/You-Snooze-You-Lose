@@ -38,8 +38,8 @@ class GameGameScene: SKScene {
      let phone = SKSpriteNode(imageNamed: "phone3")
      let laptop = SKSpriteNode(imageNamed: "laptopGGS")
      let notebook = SKSpriteNode(imageNamed: "notebookGGS")
-    var slabel = SKLabelNode()
-    var tlabel = SKLabelNode()
+    var slabel = SKLabelNode(fontNamed: "8BIT WONDER")
+    var tlabel = SKLabelNode(fontNamed: "8BIT WONDER")
   
     
     var finger = SKSpriteNode(imageNamed:"finger")
@@ -433,6 +433,25 @@ class GameGameScene: SKScene {
                 }
             }
             if nodeITapped.name == "notebook"{
+                awake += notebookA
+                suspicion -= multiplier*notebookS
+                
+                var checkS = notebookS
+                
+                if(u.zRotation <= -3.2 && u.zRotation >= -4.8){
+                    
+                    checkS *= 2
+                    
+                } else {
+                    checkS *= 1
+                }
+                
+                if(n < 0){
+                    spawnTPlusMinusStat(spawnPosition: notebook.position, susValue: checkS, tireValue: notebookA)
+                } else if(n > 0){
+                    spawnTMinusPlusStat(spawnPosition: notebook.position, susValue: checkS, tireValue: notebookA)
+                }
+                
                 updateTimer(timer: timer!)
                 let sceneToMoveTo = drawing(size: self.size) //Change to drawing Scene
                 sceneToMoveTo.scaleMode = self.scaleMode
